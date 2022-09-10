@@ -1,7 +1,6 @@
 # Trading-Stategy_EX
 
-
-
+「Python金融市場賺大錢聖經：寫出你的專屬指標」的自我筆記及練習
 
 1.安裝python
 
