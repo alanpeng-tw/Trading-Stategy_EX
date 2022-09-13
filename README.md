@@ -37,14 +37,13 @@ git push origin master
 	pip install -r requirment.txt
 
 6.在虛擬環境安裝python套件
-
-	pandas及requests、beautifulsoup4、lxml
 	
 	pip install pandas
 	pip install requests
 	pip install beautifulsoup4
 	pip install lxml
 	pip install openpyxl
+	pip install yfinance
 	
 	===經常使用的 pip command ===
 	#解除套件
