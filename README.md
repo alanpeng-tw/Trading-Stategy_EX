@@ -44,6 +44,7 @@ git push origin master
 	pip install lxml
 	pip install openpyxl
 	pip install yfinance
+	pip install ta
 	
 	===經常使用的 pip command ===
 	#解除套件
