@@ -42,4 +42,4 @@ bb_bbli = indicator_bb.bollinger_lband_indicator()
 #布林帶寬
 bb_bbw = indicator_bb.bollinger_wband()
 #布林%b指標(%b值 = (收盤價 布林帶下軌值) / ( 布林帶上軌值 布林帶下軌值))
-bb_bbp = indicator_bb.bollinger_pband()
+bb_bbp = indicator_bb.bollinger_pband() 
