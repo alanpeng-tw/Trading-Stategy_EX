@@ -1,3 +1,18 @@
+
+#download github project
+git clone https://github.com/alanpeng-tw/Trading-Stategy_EX.git
+
+
+#push project
+git status
+
+git add file_name
+
+git commit -m "xxxxx"
+
+git push origin master
+
+
 # Trading-Stategy_EX
 
 「Python金融市場賺大錢聖經：寫出你的專屬指標」一書的自我筆記及練習
@@ -25,14 +40,14 @@
 	pip install -r requirment.txt
 
 6.在虛擬環境安裝python套件
-
-	pandas及requests、beautifulsoup4、lxml
 	
 	pip install pandas
 	pip install requests
 	pip install beautifulsoup4
 	pip install lxml
 	pip install openpyxl
+	pip install yfinance
+	pip install ta
 	
 	===經常使用的 pip command ===
 	#解除套件
