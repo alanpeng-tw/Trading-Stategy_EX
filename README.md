@@ -5,8 +5,11 @@ git clone https://github.com/alanpeng-tw/Trading-Stategy_EX.git
 
 #push project
 git status
+
 git add file_name
+
 git commit -m "xxxxx"
+
 git push origin master
 
 
