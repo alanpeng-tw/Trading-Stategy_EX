@@ -3,14 +3,27 @@
 git clone https://github.com/alanpeng-tw/Trading-Stategy_EX.git
 
 
-#push project
+#first time to push project
 git status
 
 git add file_name
 
 git commit -m "xxxxx"
 
-git push origin master
+git push origin main
+
+
+#第二次的push file to github前,都要先pull , 然後再做add、commit、push
+
+git status
+
+git pull origin main
+
+git commit -m "xxxxx"
+
+git push origin main
+
+
 
 
 # Trading-Stategy_EX
