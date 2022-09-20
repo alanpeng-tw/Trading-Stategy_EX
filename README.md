@@ -1,27 +1,27 @@
 
 #download github project
-git clone https://github.com/alanpeng-tw/Trading-Stategy_EX.git
+	git clone https://github.com/alanpeng-tw/Trading-Stategy_EX.git
 
 
 #first time to push project
-git status
+	git status
 
-git add file_name
+	git add file_name
 
-git commit -m "xxxxx"
+	git commit -m "xxxxx"
 
-git push origin main
+	git push origin main
 
 
 #第二次的push file to github前,都要先pull , 然後再做add、commit、push
 
-git status
+	git status
 
-git pull origin main
+	git pull origin main
 
-git commit -m "xxxxx"
+	git commit -m "xxxxx"
 
-git push origin main
+	git push origin main
 
 
 
