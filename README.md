@@ -61,6 +61,7 @@
 	pip install openpyxl
 	pip install yfinance
 	pip install ta
+	pip install mpl_finance
 	
 	===經常使用的 pip command ===
 	#解除套件
