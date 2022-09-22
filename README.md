@@ -1,4 +1,6 @@
 
+#作者的github : https://github.com/arleigh418/python-and-Taiwan-stock-market
+
 #download github project
 	git clone https://github.com/alanpeng-tw/Trading-Stategy_EX.git
 
