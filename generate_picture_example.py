@@ -10,6 +10,18 @@ stock = yf.Ticker('2330.TW')
 df = stock.history(start="2020-01-01", end="2022-09-22")
 
 
+
+# ===== 呼叫布林通道 =====
+indicator_bb = ta.volatility.BollingerBands(close=df["Close"],window=20,window_dev=2)
+
+# ===== 布林中線 =====
+df['bbm'] = indicator_bb.bollinger_mavg()
+# ===== 布林上線 =====
+df['bbh'] = indicator_bb.bollinger_hband()
+# ===== 布林下線 =====
+df['bbl'] = indicator_bb.bollinger_lband()
+
+
 ################ create a canvas ################
 #figsize可以不設, 但default是小小的一張 canvas 
 fig = plt.figure(figsize=(24,8))
@@ -53,13 +65,32 @@ mpf.candlestick2_ochl(ax, df['Open'], df['Close'], df['High'],
 #設置刻度
 '''
 df.index:因 yfinance 給的資料日期放在 index, 所以要傳入 index 長度的 range
+並每30個資料為一個區間
 '''
-ax.set_xticks(range(len(df.index)))
+ax.set_xticks(range(0,len(df.index),30))
 
 #設置刻度's value
-#將日期放入刻度內
-ax.set_xticklabels(df.index)
+#將日期放入刻度內,因刻度是每30個資料為一個區間刻度,故這裡也要每30個資料取一次
+#rotation=90 是將X軸的值由橫變直
 
+
+#因 dataframe 不允許直接對 index 做任何相關運算,故下面的程式會掛掉
+#ax.set_xticklabels(df.index[::30].apply(lambda x: x.strftime('%Y-%m-%d')),rotation=90)
+
+#先用DateFrame 將 'Date'的值取出後,再使用lambda做日期的轉換
+convert_date = pd.DataFrame(df.index[::30])['Date'].apply(lambda x: x.strftime('%Y-%m-%d'))
+
+ax.set_xticklabels(convert_date,rotation=90,fontsize=6)
+
+
+#在ax區塊上畫上布林上中下通道
+'''
+plot() : 畫線
+.values : 將 dataframe 轉為 numpy.array 的格式
+'''
+ax.plot(df['bbm'].values,color='b',label='bbm')
+ax.plot(df['bbh'].values,color='g',label='bbh')
+ax.plot(df['bbl'].values,color='r',label='bbl')
 
 
 #設置圖片標題
@@ -68,7 +99,8 @@ plt.title(f'2330 Stock Price')
 plt.xlabel('Date')
 #設置Y軸名稱
 plt.ylabel('Price')
-
+#設置legend才會有label跑出來
+plt.legend(loc='best')
 
 
 plt.show()
