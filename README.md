@@ -133,3 +133,17 @@ z:指定這張圖應該放的位置
 
 #用dataframe以每隔 x 個為周期篩選出資料
 [::2] => 以每隔 2 篩選出新的 list
+
+
+
+#字串前加r : 顯示原始字串 => 一般在加上＇＼＇時，程式會認作轉義字元來處理，ex: \t=加上個tab
+但加上r後, \n會被完整顯示出來
+'Hello \nWorld!!' => Hello	World!!
+r'Hello \nWorld!!' => Hello \nWorld!!
+
+
+#字串前加f : 字串插值
+keyword = 'fruit'
+print(f'what is you favorite {keyword}')
+=> what is you favorite fruit
+
